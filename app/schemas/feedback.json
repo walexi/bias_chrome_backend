@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Feedback",
+  "description": "The schema for reported feedbacks on model predictions",
+  "additionalProperties": false,
+  "required": ["text", "url", "bias_type", "bias_level_predicted", "bias_level_feedback"],
+  "properties": {
+    "text": {
+      "type": "string",
+      "title": "The text schema",
+      "description": "The text input to the model",
+      "default": ""
+    },
+    "hash": {
+      "type": "string",
+      "title": "The hash schema",
+      "description": "The hash of the reported text",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "title": "The url schema",
+      "description": "The url of the webpage",
+      "default": "",
+      "format": "uri"
+    },
+    "bias_type": {
+      "default": "",
+      "description": "The bias type, one of racial, gender, and religious",
+      "title": "The bias_type schema",
+      "enum": [
+        "racial",
+        "gender",
+        "religious"
+      ],
+      "type": "string"
+    },
+    "bias_level_predicted": {
+      "default": 0,
+      "description": "The predicted level of bias",
+      "title": "The bias_level schema",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "integer"
+    },
+    "bias_level_feedback": {
+      "default": 0,
+      "description": "The corrected level of bias",
+      "title": "The bias_level schema",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "integer"
+    }
+  }
+}

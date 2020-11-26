@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Report",
+  "description": "The schema for reported text from webpages",
+  "additionalProperties": false,
+  "required": ["text", "url", "bias_type", "bias_level"],
+  "properties": {
+    "text": {
+      "type": "string",
+      "title": "The text schema",
+      "description": "The reported text from the webpage",
+      "default": ""
+    },
+    "hash": {
+      "type": "string",
+      "title": "The hash schema",
+      "description": "The hash of the reported text",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "title": "The url schema",
+      "description": "The url of the webpage",
+      "default": "",
+      "format": "uri"
+    },
+    "bias_type": {
+      "default": "",
+      "description": "The bias type, one of racial, gender, and religious",
+      "title": "The bias_type schema",
+      "enum": [
+        "racial",
+        "gender",
+        "religious"
+      ],
+      "type": "string"
+    },
+    "bias_level": {
+      "default": 0,
+      "description": "The level of bias",
+      "title": "The bias_level schema",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "integer"
+    }
+  }
+}
