@@ -10,12 +10,11 @@ let MONGODB_URI = process.env.MONGODB_URI || "mongodb://mongodb/bias";
 if (ENV === "test") {
   MONGODB_URI = global.__MONGO_URI__;
 }
-// mongodb://mila_bias:KgkZnCbQscQ3QgSd@bias0.iy8od.mongodb.net/bias?retryWrites=true&w=majority
+
 mongoose.Promise = Promise;
 if (ENV === "development" || ENV === "test") {
   mongoose.set("debug", true);
 }
-// KgkZnCbQscQ3QgSd
 /**
  * Connect to mongoose asynchronously or bail out if it fails
  */
